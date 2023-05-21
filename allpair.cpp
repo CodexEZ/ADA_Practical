@@ -4,12 +4,13 @@ using namespace std;
 
 void floyd_warshal(int graph[V][V]){
     int dist[V][V];
+    //duplicating graph into dist
     for(int i=0;i<V;i++){
         for(int j=0;j<V;j++){
             dist[i][j]=graph[i][j];
         }
     }
-    for(int k=0;k<V;k++){
+    for(int k=0;k<V;k++){//Intermedite node , for e.g we want to go from a[i][j] using a[i][k] and a[k][j]
         for(int i=0;i<V;i++){
             for(int j=0;j<V;j++){
                 if(dist[i][k]==INT_MAX || dist[k][j]==INT_MAX)
@@ -20,6 +21,7 @@ void floyd_warshal(int graph[V][V]){
             }
         }
     }
+    //printing all pair minimum distance
     for(int i=0;i<V;i++){
         for(int j=0;j<V;j++){
             if(dist[i][j]==INT_MAX){
@@ -31,6 +33,7 @@ void floyd_warshal(int graph[V][V]){
            
         }
     }
+    //Printing the matrix
     for(int i=0;i<V;i++){
         for(int j=0;j<V;j++){
             if(dist[i][j]==INT_MAX){
