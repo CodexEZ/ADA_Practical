@@ -34,18 +34,30 @@ void floyd_warshal(int graph[V][V]){
         }
     }
     //Printing the matrix
+
+    cout<<"\tTHE MATRIX IS\t\n";
+    for(int i=0;i<49;i++){//for beautification purpose only no need to copy
+        cout<<"-";
+    }
+    cout<<endl;
     for(int i=0;i<V;i++){
+        cout<<"|";
         for(int j=0;j<V;j++){
             if(dist[i][j]==INT_MAX){
-                cout<<"INF"<<"\t";
+                cout<<"INF"<<"\t|";
             }
             else{
-                cout<<dist[i][j]<<"\t";
+                cout<<dist[i][j]<<"\t|";
             }
            
         }
         cout<<endl;
+        for(int i=0;i<49;i++){//for beautification purpose only no need to copy
+            cout<<"-";
+        }
+        cout<<endl;
     }
+    git
 
 }
 
